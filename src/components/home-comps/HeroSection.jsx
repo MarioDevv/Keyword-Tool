@@ -1,7 +1,7 @@
 import { Typography, Button } from "@material-tailwind/react"
 
 
-export default function HeroSection() {
+const HeroSection = () => {
     return (
         <div className="relative flex items-center justify-center"> {/* Hero Section */}
             <div className="absolute z-[1]">
@@ -19,4 +19,6 @@ export default function HeroSection() {
         </div>
     )
 }
+
+export default HeroSection
 

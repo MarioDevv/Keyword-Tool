@@ -7,7 +7,7 @@ module.exports = withMT({
     fontFamily: {
       mon: ['Montserrat', 'sans-serif'],
     }, brightness: {
-      25: '.35',
+      25: '.25',
     },
     extend: {},
   },

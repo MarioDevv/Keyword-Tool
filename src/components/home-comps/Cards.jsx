@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
-export default function Cards(props) {
+const Cards = (props) => {
     return (
         <>
             <Card className="mt-6 w-96">
@@ -34,3 +34,5 @@ export default function Cards(props) {
         </>
     );
 }
+
+export default Cards

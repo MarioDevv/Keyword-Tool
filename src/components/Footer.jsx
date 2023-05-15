@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 
-export default function Example() {
+const Footer = () => {
     return (
         <footer className="w-full p-8 mt-10 border-t-2 border-blue-gray-100">
             <div className="flex flex-row flex-wrap items-center justify-center text-center bg-white gap-y-6 gap-x-12 md:justify-between">
@@ -13,7 +13,7 @@ export default function Example() {
                             as="a"
                             href="#"
                             color="blue-gray"
-                            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+                            className="transition-colors font-mon hover:text-blue-500 focus:text-blue-500"
                         >
                             About Us
                         </Typography>
@@ -23,7 +23,7 @@ export default function Example() {
                             as="a"
                             href="#"
                             color="blue-gray"
-                            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+                            className="transition-colors font-mon hover:text-blue-500 focus:text-blue-500"
                         >
                             License
                         </Typography>
@@ -33,7 +33,7 @@ export default function Example() {
                             as="a"
                             href="#"
                             color="blue-gray"
-                            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+                            className="transition-colors font-mon hover:text-blue-500 focus:text-blue-500"
                         >
                             Contribute
                         </Typography>
@@ -43,7 +43,7 @@ export default function Example() {
                             as="a"
                             href="#"
                             color="blue-gray"
-                            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+                            className="transition-colors font-mon hover:text-blue-500 focus:text-blue-500"
                         >
                             Contact Us
                         </Typography>
@@ -51,9 +51,11 @@ export default function Example() {
                 </ul>
             </div>
             <hr className="my-8 border-blue-gray-100" />
-            <Typography color="blue-gray" className="font-normal text-center">
+            <Typography color="blue-gray" className="font-semibold text-center font-mon">
                 &copy; 2023 Keyword Research Tool
             </Typography>
         </footer>
     );
 }
+
+export default Footer;

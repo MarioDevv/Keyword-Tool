@@ -6,7 +6,7 @@ import {
     IconButton,
 } from "@material-tailwind/react";
 
-export default function Example() {
+const NavbarMenu = () => {
     const [openNav, setOpenNav] = React.useState(false);
 
     React.useEffect(() => {
@@ -116,3 +116,5 @@ export default function Example() {
         </>
     );
 }
+
+export default NavbarMenu;

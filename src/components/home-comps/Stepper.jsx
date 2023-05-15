@@ -8,7 +8,7 @@ import {
     Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+const Steps = () => {
     return (
         <Timeline>
             <TimelineItem>
@@ -109,3 +109,6 @@ export default function Example() {
         </Timeline>
     );
 }
+
+export default Steps;
+

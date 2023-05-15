@@ -1,14 +1,41 @@
-import Home from './pages/Home'
-import Console from './pages/Console'
-import {Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
+
+// Spinner
+import { Spinner } from "@material-tailwind/react";
+
 
 function App() {
+
+  // Lazy loading
+  const Home = lazy(() => import('./pages/Home'))
+  const Console = lazy(() => import('./pages/Console'))
+
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<Console />} />
+      <Route path='/'
+        element={
+          <Suspense fallback={
+            <div className='flex items-center justify-center h-screen'>
+              <Spinner color='blue' className='w-12 h-12' />
+            </div>
+          }>
+            <Home />
+          </Suspense>
+        }
+      />
+      <Route path='/console'
+        element={
+          <Suspense fallback={
+            <div className='flex items-center justify-center h-screen'>
+              <Spinner color='blue' className='w-12 h-12' />
+            </div>
+          }>
+            <Console />
+          </Suspense>
+        }
+      />
     </Routes>
-
   )
 }
 
