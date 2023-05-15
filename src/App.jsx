@@ -1,12 +1,14 @@
-import NavbarMenu from './components/Navbar'
-import Content from './components/Content'
-function App() {
+import Home from './pages/Home'
+import Console from './pages/Console'
+import {Route, Routes } from 'react-router-dom'
 
+function App() {
   return (
-    <>
-      <NavbarMenu />
-      <Content />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<Console />} />
+    </Routes>
+
   )
 }
 
