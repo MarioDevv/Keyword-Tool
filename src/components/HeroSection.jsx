@@ -15,7 +15,7 @@ export default function HeroSection() {
                     Get Started
                 </Button>
             </div>
-            <img src="/keywords.jpg" className="aspect-[11/3] w-full object-cover brightness-25" />
+            <img src="/keywords.webp" className="aspect-[11/3] w-full object-cover brightness-25" />
         </div>
     )
 }

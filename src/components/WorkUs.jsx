@@ -16,7 +16,7 @@ export default function WorkUs() {
                         <FaGithub size={25} />
                     </Button>
                 </div>
-                <img src="/workus.jpg" className="aspect-[9/2] object-cover brightness-25" />
+                <img src="/workus.webp" className="aspect-[9/2] object-cover brightness-25" />
             </div>
         </div>
 
