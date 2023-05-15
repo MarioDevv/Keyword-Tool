@@ -17,12 +17,12 @@ export default function Example() {
                     <TimelineIcon className="flex items-center justify-center w-10 h-10 ">
                         1
                     </TimelineIcon>
-                    <Typography variant="lead" color="blue-gray" className="font-semibold font-mon">
+                    <Typography variant="paragraph" color="blue-gray" className="font-semibold font-mon">
                         Log in to Ahrefs
                     </Typography>
                 </TimelineHeader>
                 <TimelineBody className="pb-8">
-                    <Typography color="gray" className="font-normal text-gray-700 font-mon">
+                    <Typography color="gray" variant="small" className="font-normal text-gray-700 font-mon">
                         Login into your Ahrefs account
                     </Typography>
                 </TimelineBody>
@@ -33,12 +33,12 @@ export default function Example() {
                     <TimelineIcon className="flex items-center justify-center w-10 h-10 ">
                         2
                     </TimelineIcon>
-                    <Typography variant="lead" color="blue-gray" className="font-semibold font-mon">
+                    <Typography variant="paragraph" color="blue-gray" className="font-semibold font-mon">
                         Keywords Explorer
                     </Typography>
                 </TimelineHeader>
                 <TimelineBody className="pb-8">
-                    <Typography color="gray" className="font-normal text-gray-700 font-mon">
+                    <Typography color="gray" variant="small" className="font-normal text-gray-700 font-mon">
                         Go to the Keywords Explorer
                     </Typography>
                 </TimelineBody>
@@ -49,12 +49,12 @@ export default function Example() {
                     <TimelineIcon className="flex items-center justify-center w-10 h-10 ">
                         3
                     </TimelineIcon>
-                    <Typography variant="lead" color="blue-gray" className="font-semibold font-mon">
+                    <Typography variant="paragraph" color="blue-gray" className="font-semibold font-mon">
                         Export to CSV
                     </Typography>
                 </TimelineHeader>
                 <TimelineBody className="pb-8">
-                    <Typography color="gray" className="font-normal text-gray-700 font-mon">
+                    <Typography color="gray" variant="small" className="font-normal text-gray-700 font-mon">
                         Export the keywords to a CSV
                     </Typography>
                 </TimelineBody>
@@ -65,12 +65,12 @@ export default function Example() {
                     <TimelineIcon className="flex items-center justify-center w-10 h-10 ">
                         4
                     </TimelineIcon>
-                    <Typography variant="lead" color="blue-gray" className="font-semibold font-mon">
+                    <Typography variant="paragraph" color="blue-gray" className="font-semibold font-mon">
                         Number of keywords
                     </Typography>
                 </TimelineHeader>
                 <TimelineBody className="pb-8">
-                    <Typography color="gray" className="font-normal text-gray-700 font-mon">
+                    <Typography color="gray" variant="small" className="font-normal text-gray-700 font-mon">
                         Select the number of keywords per topic
                     </Typography>
                 </TimelineBody>
@@ -81,12 +81,12 @@ export default function Example() {
                     <TimelineIcon className="flex items-center justify-center w-10 h-10 ">
                         5
                     </TimelineIcon>
-                    <Typography variant="lead" color="blue-gray" className="font-semibold font-mon">
+                    <Typography variant="paragraph" color="blue-gray" className="font-semibold font-mon">
                         Accuracy of the Tool
                     </Typography>
                 </TimelineHeader>
                 <TimelineBody className="pb-8">
-                    <Typography color="gray" className="font-normal text-gray-700 font-mon">
+                    <Typography color="gray" variant="small" className="font-normal text-gray-700 font-mon">
                         Select the accuracy of the tool
                     </Typography>
                 </TimelineBody>
@@ -96,12 +96,12 @@ export default function Example() {
                     <TimelineIcon className="flex items-center justify-center w-10 h-10 ">
                         6
                     </TimelineIcon>
-                    <Typography variant="lead" color="blue-gray" className="font-semibold font-mon">
+                    <Typography variant="paragraph" color="blue-gray" className="font-semibold font-mon">
                         Download the CSV
                     </Typography>
                 </TimelineHeader>
                 <TimelineBody className="pb-8">
-                    <Typography color="gray" className="font-normal text-gray-700 font-mon">
+                    <Typography color="gray" variant="small" className="font-normal text-gray-700 font-mon">
                         Download the CSV file with the keywords
                     </Typography>
                 </TimelineBody>

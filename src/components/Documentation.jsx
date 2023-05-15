@@ -4,12 +4,12 @@ export default function Documentation() {
     return (
         <>
             <div className="flex flex-col w-1/3 itema-center">
-                <Typography variant="h2" className="mb-4 font-mon">
+                <Typography variant="h3" className="mb-4 font-mon">
                     Quick Start
                 </Typography>
                 <div className="flex flex-col gap-6">
                     <div className="p-5 text-center bg-gray-100 rounded-lg">
-                        <Typography variant="paragraph" className="text-justify font-mon">
+                        <Typography variant="small" className="text-justify font-mon">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet est sit amet molestie sagittis.
                             Etiam dictum non erat in interdum. Suspendisse a lectus sit amet dui congue congue.
                             Cras elementum imperdiet felis, id gravida ex rhoncus eu.
@@ -21,7 +21,7 @@ export default function Documentation() {
                         </Typography>
                     </div>
                     <div className="p-5 text-center bg-gray-100 rounded-lg">
-                        <Typography variant="paragraph" className="text-justify font-mon">
+                        <Typography variant="small" className="text-justify font-mon">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet est sit amet molestie sagittis.
                             Etiam dictum non erat in interdum. Suspendisse a lectus sit amet dui congue congue.
                             Cras elementum imperdiet felis, id gravida ex rhoncus eu.
