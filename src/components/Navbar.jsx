@@ -24,7 +24,7 @@ export default function Example() {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <a href="#" className="flex items-center text-lg text-black hover:text-blue-500 font-mon">
+                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
                     Pages
                 </a>
             </Typography>
@@ -34,7 +34,7 @@ export default function Example() {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <a href="#" className="flex items-center text-lg text-black hover:text-blue-500 font-mon">
+                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
                     Account
                 </a>
             </Typography>
@@ -44,7 +44,7 @@ export default function Example() {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <a href="#" className="flex items-center text-lg text-black hover:text-blue-500 font-mon">
+                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
                     Blocks
                 </a>
             </Typography>
@@ -54,7 +54,7 @@ export default function Example() {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <a href="#" className="flex items-center text-lg text-black hover:text-blue-500 font-mon">
+                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
                     Docs
                 </a>
             </Typography>
@@ -65,7 +65,7 @@ export default function Example() {
         <>
             <Navbar className="sticky inset-0 z-10 max-w-full px-4 py-5 rounded-none h-max lg:px-8 lg:py-4">
                 <div className="flex items-center justify-between text-blue-gray-900">
-                    <Typography as="a" href="#" className="mr-4 cursor-pointer py-1.5 font-semibold text-xl font-mon">
+                    <Typography as="a" href="#" className="mr-4 cursor-pointer py-1.5 font-semibold text-lg font-mon">
                         Keyword Research Tool
                     </Typography>
                     <div className="flex items-center gap-4">

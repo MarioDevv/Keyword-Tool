@@ -2,7 +2,8 @@ import { Typography, Button } from "@material-tailwind/react";
 import Stepper from "./Stepper";
 export default function Documentation() {
     return (
-        <>
+
+        <div className="flex justify-center gap-20 mt-12">
             <div className="flex flex-col w-1/3 itema-center">
                 <Typography variant="h3" className="mb-4 font-mon">
                     Quick Start
@@ -40,6 +41,6 @@ export default function Documentation() {
             <div className="gap-10 mt-16">
                 <Stepper />
             </div>
-        </>
+        </div>
     );
 }
