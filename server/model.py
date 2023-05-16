@@ -1,19 +1,29 @@
-from gensim.models import KeyedVectors
+import pandas as pd
+from gensim import corpora, models
 
-# Cargar el modelo
-model_path = 'crawl-300d-2M.vec'
-model = KeyedVectors.load_word2vec_format(model_path, binary=False)
+class Main:
+    
+    def __init__(self, path: str) -> None:
+        self.path = path
 
-# Obtener el vector de una palabra
-word = 'fruta'
-vector = model[word]
+    def get_data(self) -> pd.DataFrame:
+        return pd.read_csv(self.path)
+    
+    def get_keywords(self) -> list:
+        return self.get_data()['Keyword'].tolist()
+    
+    def get_dictionary(self) -> corpora.Dictionary:
+        return corpora.Dictionary([self.get_keywords()])
+    
+    def get_corpus(self) -> list:
+        return [self.get_dictionary().doc2bow([text]) for text in self.get_keywords()]
 
-# Realizar operaciones con los vectores
-# Por ejemplo, encontrar las palabras más similares a 'fruta'
-similar_words = model.most_similar(word)
+    def get_lda_model(self, topics: int, passes: int, iterations: int) -> models.ldamodel.LdaModel:
+        return models.ldamodel.LdaModel(self.get_corpus(), num_topics=topics, id2word=self.get_dictionary(), passes=passes, iterations=iterations)
 
-# Imprimir los resultados
-print(f'Vector de "{word}": {vector}')
-print(f'Palabras similares a "{word}":')
-for similar_word, similarity in similar_words:
-    print(similar_word, similarity)
+    def get_lda_model_topics(self, model : models.ldamodel.LdaModel, words) -> list:
+        return  model.print_topics(num_words=words)
+
+    def run (self, topics: int, passes: int, iterations: int, words:int) -> None:
+        model = self.get_lda_model(topics=topics, passes=passes, iterations=iterations)
+        return self.get_lda_model_topics(model, words=words)
