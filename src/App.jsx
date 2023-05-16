@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import React, { lazy, Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 
 // Spinner
 import { Spinner } from "@material-tailwind/react";
@@ -9,7 +9,7 @@ function App() {
 
   // Lazy loading
   const Home = lazy(() => import('./pages/Home'))
-  const Console = lazy(() => import('./pages/Console'))
+  const Console = lazy(() => import('./pages/Browser'))
 
   return (
     <Routes>
@@ -24,7 +24,7 @@ function App() {
           </Suspense>
         }
       />
-      <Route path='/console'
+      <Route path='/browser'
         element={
           <Suspense fallback={
             <div className='flex items-center justify-center h-screen'>
