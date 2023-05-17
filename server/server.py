@@ -1,16 +1,19 @@
-from flask import Flask
+from flask import Flask, request
+from flask_cors import CORS
 from model import Main
+import pandas as pd
 
 
 app = Flask(__name__)
-model = Main(path='data.csv') # Path to the csv file
+CORS(app)
 
-@app.route('/tool')
 
+@app.route('/tool', methods=['POST'])
 def tool():
-    response = model.run(topics=3, passes=10, iterations=1000, words=5)
-    return response
-
+    formData = request.form
+    formData.get('file').save('data.csv')
+    # Return the first column of the csv file as a list
+    return {'result': Main('data.csv').get_data()['Keyword'].tolist()}
 
 
 if __name__ == '__main__':

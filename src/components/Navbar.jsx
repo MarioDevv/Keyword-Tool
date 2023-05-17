@@ -67,7 +67,7 @@ const NavbarMenu = () => {
             <Navbar className="sticky inset-0 z-10 max-w-full px-4 py-5 rounded-none h-max lg:px-8 lg:py-4">
                 <div className="flex items-center justify-between text-blue-gray-900">
                     <Link to="/">
-                        <Typography as="a" href="#" className="mr-4 cursor-pointer py-1.5 font-semibold text-lg font-mon">
+                        <Typography className="mr-4 cursor-pointer py-1.5 font-semibold text-lg font-mon">
                             Keyword Research Tool
                         </Typography>
                     </Link>

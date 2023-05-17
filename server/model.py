@@ -23,7 +23,3 @@ class Main:
 
     def get_lda_model_topics(self, model : models.ldamodel.LdaModel, words) -> list:
         return  model.print_topics(num_words=words)
-
-    def run (self, topics: int, passes: int, iterations: int, words:int) -> None:
-        model = self.get_lda_model(topics=topics, passes=passes, iterations=iterations)
-        return self.get_lda_model_topics(model, words=words)
