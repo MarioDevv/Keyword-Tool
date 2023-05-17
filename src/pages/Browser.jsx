@@ -1,3 +1,4 @@
+import React from "react"
 import Navbar from '../components/Navbar'
 import UploadZone from '../components/browser/UploadZone'
 import { Typography } from "@material-tailwind/react";

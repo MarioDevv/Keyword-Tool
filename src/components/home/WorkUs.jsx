@@ -1,3 +1,4 @@
+import React from "react"
 import { Typography, Button } from "@material-tailwind/react"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";

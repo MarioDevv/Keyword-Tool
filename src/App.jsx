@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
 
 // Spinner
 import { Spinner } from "@material-tailwind/react";

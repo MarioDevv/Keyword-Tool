@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Typography, Button } from "@material-tailwind/react";
 
@@ -8,10 +8,10 @@ const UploadZone = () => {
     const [Swap, setSwap] = useState(false);
     const [Filename, setFilename] = useState(false);
     const [Filesize, setFilesize] = useState(false);
-
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const onDrop = useCallback((file) => {
-        localStorage.setItem('file', file);
+        setSelectedFile(file[0]);
         setFilename(file[0].name);
         setFilesize(file[0].size);
         setSwap(true);
@@ -24,13 +24,9 @@ const UploadZone = () => {
     const handleSumbit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('file', localStorage.getItem('file'));
-        formData.append('topics', document.getElementById('topics').value);
-        formData.append('words', document.getElementById('words').value);
-        formData.append('accuracy', document.getElementById('accuracy').value);
-
-        {/* no cors */}
+        formData.append('file', selectedFile);
         const res = await fetch('http://localhost:5000/tool', {
+            ContentType: 'multipart/form-data',
             method: 'POST',
             body: formData
         });
