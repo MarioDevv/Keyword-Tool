@@ -17,9 +17,13 @@ class Main:
     
     def get_corpus(self) -> list:
         return [self.get_dictionary().doc2bow([text]) for text in self.get_keywords()]
-
+    
     def get_lda_model(self, topics: int, passes: int, iterations: int) -> models.ldamodel.LdaModel:
         return models.ldamodel.LdaModel(self.get_corpus(), num_topics=topics, id2word=self.get_dictionary(), passes=passes, iterations=iterations)
-
+    
     def get_lda_model_topics(self, model : models.ldamodel.LdaModel, words) -> list:
         return  model.print_topics(num_words=words)
+    
+    def run(self, topics: int, passes: int, iterations: int, words: int) -> list:
+        model = self.get_lda_model(topics, passes, iterations)
+        return self.get_lda_model_topics(model, words)
