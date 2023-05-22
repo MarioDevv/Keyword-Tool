@@ -27,6 +27,8 @@ dist-ssr
 # Server
 server/__pycache__
 server/data.csv
+server/client.json
+server/client.csv
 
 # Environment variables 
 .env
