@@ -31,14 +31,14 @@ const Pixelizer = () => {
 
 
     return (
-        <div className="flex items-center justify-center w-full h-2/3">
-            <div className="flex w-2/3 p-5 mt-20 border-2 rounded-lg h-96 border-blue-gray-100 justify-evenly">
+        <div className="flex flex-col items-center justify-center w-full">
+            <div className="flex w-2/3 p-5 border-2 rounded-lg h-96 border-blue-gray-100 justify-evenly">
                 <form className="flex flex-col justify-center w-2/5">
                     <Typography color="blue-gray" variant="h4" className="font-mon">
                         Quick Start
                     </Typography>
                     <Typography color="blue-gray" variant="small" className=" font-mon">
-                        Select all the links you want to analyze
+                        Select all the titles you want to analyze
                     </Typography>
                     <Typography color="blue-gray" variant="small" className=" font-mon">
                         Click in &quot;Pixelize&quot;

@@ -8,12 +8,10 @@ const Pixelator = () => {
     const [showAlert, setAlert] = React.useState(false)
     
     return (
-        <main className="relative flex flex-col items-center h-screen">
+        <main className="flex flex-col justify-between h-screen ">
             <NavbarMenu />
             <Pixelizer />
-            <div className="absolute bottom-0 w-full">
-                <Footer />
-            </div>
+            <Footer />
         </main>
     )
 }
