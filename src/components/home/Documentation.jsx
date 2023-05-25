@@ -39,7 +39,7 @@ const Documentation = () => {
                         </Typography>
                     </div>
                     <Link to="/browser">
-                        <Button color="blue" size="lg" fullWidth className="border font-mon">
+                        <Button color="blue" size="lg" fullWidth>
                             Get Started
                         </Button>
                     </Link>
