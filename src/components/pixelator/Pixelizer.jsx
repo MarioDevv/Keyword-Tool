@@ -32,6 +32,12 @@ const Pixelizer = () => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
+            <Typography color="blue-gray" variant="h2" className="font-mon">
+                Pixelizer - Pixel Counter
+            </Typography>
+            <Typography color="blue-gray" variant="small" className="mb-8 font-mon">
+                This tool will help you to know how many pixels your titles have.
+            </Typography>
             <div className="flex w-4/5 p-5 border-2 rounded-lg h-96 border-blue-gray-100 justify-evenly">
                 <form className="flex flex-col justify-center w-3/5">
                     <Typography color="blue-gray" variant="h4" className="font-mon">
