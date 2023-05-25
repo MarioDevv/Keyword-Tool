@@ -15,7 +15,7 @@ const Documentation = () => {
                 </Typography>
                 <div className="flex flex-col gap-6">
                     <div className="p-5 text-center bg-gray-100 rounded-lg">
-                        <Typography variant="paragraph" className="text-justify font-mon">
+                        <Typography className="text-justify font-mon text-[15px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet est sit amet molestie sagittis.
                             Etiam dictum non erat in interdum. Suspendisse a lectus sit amet dui congue congue.
                             Cras elementum imperdiet felis, id gravida ex rhoncus eu.
@@ -27,7 +27,7 @@ const Documentation = () => {
                         </Typography>
                     </div>
                     <div className="p-5 text-center bg-gray-100 rounded-lg">
-                        <Typography variant="paragraph" className="text-justify font-mon">
+                        <Typography className="text-justify font-mon text-[15px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet est sit amet molestie sagittis.
                             Etiam dictum non erat in interdum. Suspendisse a lectus sit amet dui congue congue.
                             Cras elementum imperdiet felis, id gravida ex rhoncus eu.
