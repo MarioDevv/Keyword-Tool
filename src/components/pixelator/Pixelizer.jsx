@@ -22,7 +22,7 @@ const Pixelizer = () => {
         links.forEach((link) => {
             testElement.innerText = link;
             const width = testElement.offsetWidth;
-            output.innerHTML += `<p>${width}px</p>`;
+            output.innerHTML += `<p>${width}</p>`;
         });
 
         // Eliminar el elemento de prueba del DOM después de usarlo
