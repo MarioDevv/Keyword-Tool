@@ -6,23 +6,11 @@ import { Alert } from "@material-tailwind/react";
 
 const Pixelator = () => {
     const [showAlert, setAlert] = React.useState(false)
-
-    const handleCopy = () => {
-        setAlert(true)
-        setTimeout(() => {
-            setAlert(false)
-        }
-            , 2000)
-    }
+    
     return (
         <main className="relative flex flex-col items-center h-screen">
             <NavbarMenu />
-            <Pixelizer onHandleCopy={handleCopy} />
-            {showAlert && (
-                <Alert color="blueGray" className="flex justify-center w-1/2 mt-8">
-                    Copy to clipboard successfully! 😊
-                </Alert>
-            )}
+            <Pixelizer />
             <div className="absolute bottom-0 w-full">
                 <Footer />
             </div>
