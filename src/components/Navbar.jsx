@@ -40,7 +40,7 @@ const NavbarMenu = () => {
                 <MenuList>
                     <Link to="/pixelator" className="outline-none">
                         <MenuItem>
-                            Pixelator
+                            Pixelizer
                         </MenuItem>
                     </Link>
                     <MenuItem>
