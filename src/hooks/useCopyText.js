@@ -13,6 +13,7 @@ const copyText = () => {
     document.execCommand("copy");
     // Unselect the text
     selection.removeAllRanges();
+    alert("Text copied to clipboard");
 
 }
 export default copyText;
