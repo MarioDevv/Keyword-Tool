@@ -38,11 +38,11 @@ const NavbarMenu = () => {
                     </Typography>
                 </MenuHandler>
                 <MenuList>
-                    <MenuItem>
-                        <Link>
+                    <Link to="/pixelator" className="outline-none">
+                        <MenuItem>
                             Pixelator
-                        </Link>
-                    </MenuItem>
+                        </MenuItem>
+                    </Link>
                     <MenuItem>
                         Upcoming...
                     </MenuItem>
