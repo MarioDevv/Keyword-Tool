@@ -25,7 +25,7 @@ We welcome contributions from anyone who is interested in improving and expandin
 
 <div style="display: flex; align-items: center;">
     <div>
-	<img src="C:\Users\CP24\Downloads\rsz_descarga_auto_x2.jpg" style="filter: brightness(1.1); mix-blend-mode: multiply; width: 50px;" />
+	<img src="https://i.imgur.com/sRpkzzg.jpg" style="filter: brightness(1.1); mix-blend-mode: multiply; width: 50px;" />
     </div>
     <h3>Acknowledgments</h3>
 </div>
