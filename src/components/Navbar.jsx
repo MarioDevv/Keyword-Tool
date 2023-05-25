@@ -4,8 +4,13 @@ import {
     Collapse,
     Typography,
     IconButton,
+    MenuHandler,
+    MenuItem,
+    Menu,
+    MenuList,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const NavbarMenu = () => {
     const [openNav, setOpenNav] = React.useState(false);
@@ -17,48 +22,41 @@ const NavbarMenu = () => {
         );
     }, []);
 
+
+    const Dropdown = () => {
+        return (
+            <Menu animate={{ mount: { y: 0 }, unmount: { y: 25 }, }}>
+                <MenuHandler>
+                    <Typography as="li" color="blue-gray" className='flex items-center text-black cursor-pointer text-md hover:text-blue-500 font-mon'>
+                        Tools
+                        <RiArrowDropDownLine size={18} color="black" />
+                    </Typography>
+                </MenuHandler>
+                <MenuList>
+                    <MenuItem>
+                        <Link>
+                            Pixelator
+                        </Link>
+                    </MenuItem>
+                    <MenuItem>
+                        Upcoming...
+                    </MenuItem>
+                </MenuList>
+            </Menu>
+        )
+    }
+
     const navList = (
         <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-            >
-                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
-                    Pages
-                </a>
-            </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-            >
-                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
-                    Account
-                </a>
-            </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-            >
-                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
-                    Blocks
-                </a>
-            </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-            >
-                <a href="#" className="flex items-center text-black text-md hover:text-blue-500 font-mon">
-                    Docs
-                </a>
-            </Typography>
+
+            {Dropdown()}
+
+            <Link color="blue-gray" className="text-black text-md hover:text-blue-500 font-mon">
+                Contact
+            </Link>
+            <Link color="blue-gray" className="text-black text-md hover:text-blue-500 font-mon">
+                Docs
+            </Link>
         </ul>
     );
 
@@ -67,7 +65,7 @@ const NavbarMenu = () => {
             <Navbar className="sticky inset-0 z-10 max-w-full px-4 py-5 rounded-none h-max lg:px-8 lg:py-4">
                 <div className="flex items-center justify-between text-blue-gray-900">
                     <Link to="/">
-                        <Typography className="mr-4 cursor-pointer py-1.5 font-semibold text-lg font-mon">
+                        <Typography className="mr-4 cursor-pointer py-1.5 font-semibold text-xl font-mon">
                             Keyword Research Tool
                         </Typography>
                     </Link>

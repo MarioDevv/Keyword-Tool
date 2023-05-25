@@ -11,7 +11,7 @@ const Content = () => {
     const cards_description = {
         "Indexing Console": "The Indexing Console is a web application that allows you to index your data into the Azure Cognitive Search service. It is a single page application built using React and Tailwind CSS.",
         "Search UI": "The Search UI is a web application that allows you to search your data in the Azure Cognitive Search service. It is a single page application built using React and Tailwind CSS.",
-        "Search API": "The Search API is a REST API that allows you to search your data in the Azure Cognitive Search service. It is a REST API built using Node.js and Express."
+        "Search API": "The Search API is a REST API that allows you to search your data in the Azure Cognitive Search service. It is a REST API built using Node.js and Express. It is also available as a Docker image."
     }
 
     return (

@@ -6,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 
 const WorkUs = () => {
     return (
-        <div className="flex justify-center gap-10 mt-8">
+        <div className="flex justify-center gap-10 mt-8 mb-12">
             <div className="relative flex items-center justify-center">
                 <div className="absolute z-[1] pl-10 text-center flex-col">
                     <Typography variant="h3" color="white" className="font-mon">
