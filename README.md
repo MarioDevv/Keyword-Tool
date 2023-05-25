@@ -23,12 +23,8 @@ We are committed to expanding our toolset to provide you with even more SEO reso
 
 We welcome contributions from anyone who is interested in improving and expanding our SEO tools. If you have ideas, suggestions, or would like to contribute to the development of KRT, please don't hesitate to reach out to us. We believe that collaboration drives innovation, and we look forward to working with you!
 
-<div style="display: flex; align-items: center;">
-    <div>
-	<img src="https://i.imgur.com/sRpkzzg.jpg" style="filter: brightness(1.1); mix-blend-mode: multiply; width: 50px;" />
-    </div>
-    <h3>Acknowledgments</h3>
-</div>
+ 
+### :family: Acknowledgments
 
 We would like to express our sincere appreciation to the SEO department at "Strategiczni.pl" for their collaboration and support. It has been a pleasure working with them, and we are grateful for their valuable contributions.
 
