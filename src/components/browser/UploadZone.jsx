@@ -3,6 +3,8 @@ import { useDropzone } from 'react-dropzone';
 import { Typography, Button } from "@material-tailwind/react";
 import useConvertJSONtoCSV from '../../hooks/useConvertJSON';
 import FormContent from './FormContent';
+
+
 const UploadZone = () => {
 
     const [Swap, setSwap] = React.useState(false);
@@ -10,7 +12,6 @@ const UploadZone = () => {
     const [selectedFile, setSelectedFile] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
     const [data, setData] = React.useState(false);
-
     // Hook to convert JSON to CSV
     const csv_file = useConvertJSONtoCSV(data);
 
@@ -24,8 +25,8 @@ const UploadZone = () => {
         setLoading(true);
         const formData = new FormData(e.target);
         formData.append('file', selectedFile);
-        const res = await fetch('https://7b8d-178-43-124-150.ngrok-free.app/tool', {
-            'Authorization': 'Bearer ak_2QKbsmK2s9nz5YOWpDFNGFJ93rG',
+        const res = await fetch(baseUrl, {
+            'Authorization': `Bearer ${apiKey}`,
             ContentType: 'multipart/form-data',
             method: 'POST',
             body: formData
