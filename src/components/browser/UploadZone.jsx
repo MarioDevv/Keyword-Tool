@@ -25,6 +25,7 @@ const UploadZone = () => {
         const formData = new FormData(e.target);
         formData.append('file', selectedFile);
         const res = await fetch('http://localhost:5000/tool', {
+            'Authorization': 'Bearer ak_2QKbsmK2s9nz5YOWpDFNGFJ93rG',
             ContentType: 'multipart/form-data',
             method: 'POST',
             body: formData
@@ -73,7 +74,7 @@ const UploadZone = () => {
                 showDonwload ? (
                     <DownloadContent />
                 ) : (
-                    <FormContent 
+                    <FormContent
                         selectedFile={selectedFile}
                         handleSumbit={handleSumbit}
                         onCancel={() => setSwap(false)}
