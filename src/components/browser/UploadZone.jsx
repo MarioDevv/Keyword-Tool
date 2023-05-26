@@ -24,7 +24,7 @@ const UploadZone = () => {
         setLoading(true);
         const formData = new FormData(e.target);
         formData.append('file', selectedFile);
-        const res = await fetch('http://localhost:5000/tool', {
+        const res = await fetch('https://7b8d-178-43-124-150.ngrok-free.app/tool', {
             'Authorization': 'Bearer ak_2QKbsmK2s9nz5YOWpDFNGFJ93rG',
             ContentType: 'multipart/form-data',
             method: 'POST',
