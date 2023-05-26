@@ -2,7 +2,7 @@ import React from "react"
 import { Typography, Button } from "@material-tailwind/react"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-
+import { Link } from "react-router-dom";
 
 const WorkUs = () => {
     return (
@@ -16,12 +16,16 @@ const WorkUs = () => {
                         I am always looking for new opportunities to learn and grow.
                     </Typography>
                     <div className="flex justify-center gap-5 mt-4">
-                        <Button color="white" size="sm">
-                            <FaGithub size={23} />
-                        </Button>
-                        <Button color="white" size="sm">
-                            <FaLinkedinIn size={23} />
-                        </Button>
+                        <Link to="https://github.com/MarioDevv">
+                            <Button color="white" size="sm">
+                                <FaGithub size={23} />
+                            </Button>
+                        </Link>
+                        <Link to="https://www.linkedin.com/in/mariopmdev/">
+                            <Button color="white" size="sm">
+                                <FaLinkedinIn size={23} />
+                            </Button>
+                        </Link>
                         <Button color="white" size="sm">
                             <SiGmail size={23} />
                         </Button>

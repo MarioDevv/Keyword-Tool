@@ -1,5 +1,6 @@
 import React from "react"
 import { Typography } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -21,9 +22,9 @@ const Footer = () => {
                         </Typography>
                     </li>
                     <li>
-                        <Typography as="a" href="#" color="blue-gray" className="transition-colors font-mon hover:text-blue-500 focus:text-blue-500">
+                        <Link to="https://github.com/MarioDevv/Keyword-Tool" color="blue-gray" className="transition-colors font-mon hover:text-blue-500 focus:text-blue-500">
                             Docs
-                        </Typography>
+                        </Link>
                     </li>
                 </ul>
             </div>

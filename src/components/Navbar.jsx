@@ -59,7 +59,7 @@ const NavbarMenu = () => {
             <Link color="blue-gray" className="text-black text-md hover:text-blue-500 font-mon">
                 Contact
             </Link>
-            <Link color="blue-gray" className="text-black text-md hover:text-blue-500 font-mon">
+            <Link to="https://github.com/MarioDevv/Keyword-Tool" color="blue-gray" className="text-black text-md hover:text-blue-500 font-mon">
                 Docs
             </Link>
         </ul>
