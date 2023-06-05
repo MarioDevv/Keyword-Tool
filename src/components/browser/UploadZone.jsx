@@ -26,7 +26,7 @@ const UploadZone = () => {
         const formData = new FormData(e.target);
         formData.append('file', selectedFile);
         const res = await fetch(baseUrl, {
-            'Authorization': `Bearer ${apiKey}`,
+            'Authorization': `Bearer ${import.meta.env.VITE_API_NGROK_KEY}`,
             ContentType: 'multipart/form-data',
             method: 'POST',
             body: formData
