@@ -1,8 +1,7 @@
-import React from 'react';
-import { createContext, useEffect, useState } from 'react';
+import React, { createContext } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 
 const firebaseConfig = {
@@ -15,26 +14,33 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
 
-console.log(firebaseConfig);
-
-
+// Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
+
+// Initialize Firestore
 const db = getFirestore(firebaseApp);
 const auth = getAuth(firebaseApp);
 
+// Export the context
 export const FirebaseContext = createContext();
 
+// Export the provider
 export const FirebaseProvider = ({ children }) => {
-  const [db, setDb] = useState(null);
-  const [auth, setAuth] = useState(null);
 
-  useEffect(() => {
-    setDb(db);
-    setAuth(auth);
-  }, []);
+  // Sign in with email and password
+  const signIn = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      return Promise.resolve(user);
+    } catch (error) {
+      console.log("Error: " + error);
+      return Promise.reject(error);
+    }
+  };
 
   return (
-    <FirebaseContext.Provider value={{ db, auth }}>
+    <FirebaseContext.Provider value={{ db, auth, signIn }}>
       {children}
     </FirebaseContext.Provider>
   );
