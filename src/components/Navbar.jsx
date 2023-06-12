@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
     Navbar,
     Collapse,
@@ -8,18 +9,25 @@ import {
     MenuItem,
     Menu,
     MenuList,
-    Button
+    Button,
+    Avatar,
+    ChevronDownIcon,
 } from "@material-tailwind/react";
-import { Link, useLocation } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { GoSignOut, GoGear } from "react-icons/go";
+import { BsFillPersonFill } from "react-icons/bs";
+import LoginDialog from "./Dialog";
+import { FirebaseContext } from "../config/FirebaseContext";
 
 const NavbarMenu = () => {
     const [openNav, setOpenNav] = React.useState(false);
-    const location = useLocation();
+    const { auth } = React.useContext(FirebaseContext);
+    const signOut = () => {
+        auth.signOut();
+        window.location.reload();
+    }
 
-    // Comprueba si la ruta actual es diferente de "/"
-    const hideButton = location.pathname !== '/';
-
+    
     React.useEffect(() => {
         window.addEventListener(
             "resize",
@@ -27,7 +35,65 @@ const NavbarMenu = () => {
         );
     }, []);
 
+    const profileMenuItems = [
+        { label: "My Profile", icon: BsFillPersonFill },
+        { label: "Edit Profile", icon: GoGear, },
+        { label: "Sign Out", icon: GoSignOut, },
+    ];
 
+    function ProfileMenu() {
+        const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+        const closeMenu = () => setIsMenuOpen(false);
+
+        return (
+            <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
+                <MenuHandler>
+                    <Button
+                        variant="text"
+                        color="blue-gray"
+                        className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
+                    >
+                        <Avatar
+                            variant="circular"
+                            size="md"
+                            alt="candice wu"
+                            className="border border-blue-500 p-0.5"
+                            src={"https://robohash.org/" + auth.currentUser}
+                        />
+                    </Button>
+                </MenuHandler>
+                <MenuList className="p-1">
+                    {profileMenuItems.map(({ label, icon }, key) => {
+                        const isLastItem = key === profileMenuItems.length - 1;
+                        return (
+                            <MenuItem
+                                key={label}
+                                onClick={closeMenu}
+                                className={`flex items-center gap-2 rounded ${isLastItem
+                                    ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
+                                    : ""
+                                    }`}
+                            >
+                                {React.createElement(icon, {
+                                    className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                                    strokeWidth: 2,
+                                })}
+                                <Typography
+                                    as="span"
+                                    variant="small"
+                                    className="font-normal"
+                                    color={isLastItem ? "red" : "inherit"}
+                                    onClick={isLastItem ?  signOut : undefined}
+                                >
+                                    {label}
+                                </Typography>
+                            </MenuItem>
+                        );
+                    })}
+                </MenuList>
+            </Menu>
+        );
+    }
     const Dropdown = () => {
         return (
             <Menu animate={{ mount: { y: 0 }, unmount: { y: 25 }, }}>
@@ -65,6 +131,8 @@ const NavbarMenu = () => {
         </ul>
     );
 
+
+
     return (
         <Navbar className="sticky inset-0 z-10 max-w-full px-4 py-5 rounded-none h-max lg:px-8 lg:py-4">
             <div className="flex items-center justify-between text-blue-gray-900">
@@ -75,12 +143,10 @@ const NavbarMenu = () => {
                 </Link>
                 <div className="flex items-center gap-4">
                     <div className="hidden mr-4 lg:block">{navList}</div>
-                    {!hideButton && (
-                        <Link to="/browser">
-                            <Button size="md" className="hidden lg:inline-block">
-                                Get Started
-                            </Button>
-                        </Link>
+                    {auth.currentUser ? (
+                        <ProfileMenu />
+                    ) : (
+                        <LoginDialog />
                     )}
                     <IconButton
                         variant="text"
@@ -115,7 +181,7 @@ const NavbarMenu = () => {
             </div>
             <Collapse open={openNav}>
                 {navList}
-                {!hideButton && (
+                {auth.currentUser ? null : (
                     <Button size="md" fullWidth className="mb-2">
                         Get Started
                     </Button>
