@@ -10,7 +10,7 @@ import {
     Menu,
     MenuList,
     Button,
-    Avatar,
+    Avatar
 } from "@material-tailwind/react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { GoSignOut, GoGear } from "react-icons/go";
@@ -21,29 +21,40 @@ import { FirebaseContext } from "../config/FirebaseContext";
 const NavbarMenu = () => {
     const [openNav, setOpenNav] = React.useState(false);
     const { auth } = React.useContext(FirebaseContext);
-    const [logged, setLogged] = React.useState(false);
-    
-    const signOut = () => {
-        auth.signOut();
-        setLogged(false);
-        window.location.reload();
-    }
+    const [isSignedIn, setIsSignedIn] = React.useState(false);
 
-    
+    const signOut = () => {
+
+        auth.signOut().then(() => {
+            // Sign-out successful.
+            console.log("Sign-out successful.");
+        }).catch((error) => {
+            // An error happened.
+            console.log("An error happened.");
+        });
+
+        window.location.reload();
+    };
+
+
+
     React.useEffect(() => {
         window.addEventListener(
             "resize",
             () => window.innerWidth >= 960 && setOpenNav(false)
         );
-
-        const user = auth.currentUser;
-        if (user) {
-            setLogged(true);
-        } else {
-            setLogged(false);
-        }
-            
     }, []);
+
+
+    React.useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            setIsSignedIn(!!user);
+        });
+        return () => unsubscribe();
+
+    }, [auth]);
+
+
 
     const profileMenuItems = [
         { label: "My Profile", icon: BsFillPersonFill },
@@ -93,7 +104,7 @@ const NavbarMenu = () => {
                                     variant="small"
                                     className="font-normal"
                                     color={isLastItem ? "red" : "inherit"}
-                                    onClick={isLastItem ?  signOut : undefined}
+                                    onClick={isLastItem ? signOut : undefined}
                                 >
                                     {label}
                                 </Typography>
@@ -104,7 +115,7 @@ const NavbarMenu = () => {
             </Menu>
         );
     }
-    
+
     const Dropdown = () => {
         return (
             <Menu animate={{ mount: { y: 0 }, unmount: { y: 25 }, }}>
@@ -142,7 +153,8 @@ const NavbarMenu = () => {
         </ul>
     );
 
-    
+
+
     return (
         <Navbar className="sticky inset-0 z-10 max-w-full px-4 py-5 rounded-none h-max lg:px-8 lg:py-4">
             <div className="flex items-center justify-between text-blue-gray-900">
@@ -153,11 +165,7 @@ const NavbarMenu = () => {
                 </Link>
                 <div className="flex items-center gap-4">
                     <div className="hidden mr-4 lg:block">{navList}</div>
-                    {logged ? (
-                        <ProfileMenu />
-                    ) : (
-                        <LoginDialog />
-                    )}
+                    {isSignedIn ? (<ProfileMenu />) : (<LoginDialog />)}
                     <IconButton
                         variant="text"
                         className="w-6 h-6 ml-auto text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
