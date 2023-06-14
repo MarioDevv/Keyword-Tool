@@ -11,7 +11,6 @@ import {
     MenuList,
     Button,
     Avatar,
-    ChevronDownIcon,
 } from "@material-tailwind/react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { GoSignOut, GoGear } from "react-icons/go";
@@ -94,6 +93,7 @@ const NavbarMenu = () => {
             </Menu>
         );
     }
+    
     const Dropdown = () => {
         return (
             <Menu animate={{ mount: { y: 0 }, unmount: { y: 25 }, }}>
@@ -130,8 +130,6 @@ const NavbarMenu = () => {
             </Link>
         </ul>
     );
-
-
 
     return (
         <Navbar className="sticky inset-0 z-10 max-w-full px-4 py-5 rounded-none h-max lg:px-8 lg:py-4">
