@@ -30,7 +30,7 @@ const LoginDialog = () => {
         const data = new FormData(e.target);
         signIn(data.get("email"), data.get("password"))
             .then(() => { 
-                window.location.reload();
+                console.log("Sign-in successful.");
             })
             .catch((err) => {
                 setStatus(false);

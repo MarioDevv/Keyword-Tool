@@ -33,7 +33,6 @@ const NavbarMenu = () => {
             console.log("An error happened.");
         });
 
-        window.location.reload();
     };
 
 
