@@ -21,8 +21,11 @@ import { FirebaseContext } from "../config/FirebaseContext";
 const NavbarMenu = () => {
     const [openNav, setOpenNav] = React.useState(false);
     const { auth } = React.useContext(FirebaseContext);
+    const [logged, setLogged] = React.useState(false);
+    
     const signOut = () => {
         auth.signOut();
+        setLogged(false);
         window.location.reload();
     }
 
@@ -32,6 +35,14 @@ const NavbarMenu = () => {
             "resize",
             () => window.innerWidth >= 960 && setOpenNav(false)
         );
+
+        const user = auth.currentUser;
+        if (user) {
+            setLogged(true);
+        } else {
+            setLogged(false);
+        }
+            
     }, []);
 
     const profileMenuItems = [
@@ -131,6 +142,7 @@ const NavbarMenu = () => {
         </ul>
     );
 
+    
     return (
         <Navbar className="sticky inset-0 z-10 max-w-full px-4 py-5 rounded-none h-max lg:px-8 lg:py-4">
             <div className="flex items-center justify-between text-blue-gray-900">
@@ -141,7 +153,7 @@ const NavbarMenu = () => {
                 </Link>
                 <div className="flex items-center gap-4">
                     <div className="hidden mr-4 lg:block">{navList}</div>
-                    {auth.currentUser ? (
+                    {logged ? (
                         <ProfileMenu />
                     ) : (
                         <LoginDialog />

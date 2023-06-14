@@ -76,6 +76,13 @@ const Home = () => {
                                 KRT community now and reach new levels of success!
                             </Typography>
                         </div>
+                        <div className="p-5 text-center bg-gray-100 rounded-lg">
+                            <Typography className="text-justify font-mon text-[15px]">
+                                With KRT Keyword Research Tools, you not only get the most relevant keywords,
+                                but also exceptional support. Our team of experts is committed to providing the
+                                assistance you need to make the most of the tool.
+                            </Typography>
+                        </div>
                         <Link to="/browser">
                             <Button color="blue" size="lg" fullWidth>
                                 Get Started
