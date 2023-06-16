@@ -81,7 +81,7 @@ const NavbarMenu = () => {
                             size="md"
                             alt="candice wu"
                             className="border border-blue-500 p-0.5"
-                            src={"https://robohash.org/" + auth.currentUser}
+                            src={"https://robohash.org/" + auth.currentUser.email}
                         />
                     </Button>
                 </MenuHandler>
