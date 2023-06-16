@@ -24,6 +24,7 @@ const LoginDialog = () => {
         }
     }, [open]);
     
+    
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();

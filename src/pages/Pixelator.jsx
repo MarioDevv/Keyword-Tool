@@ -7,7 +7,29 @@ import { Navigate } from "react-router-dom";
 
 const Pixelator = () => {
     const { auth } = React.useContext(FirebaseContext);
+    const [isSignedIn, setIsSignedIn] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(true);
 
+    React.useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            setIsSignedIn(!!user);
+            setIsLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, [auth]);
+
+    if (isLoading) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <p>Loading...</p>
+            </div>
+        )
+    }   
+
+    if (!isSignedIn) {
+        return <Navigate to="/" />;
+    }
     return (
         <>
             {auth.currentUser === null ?

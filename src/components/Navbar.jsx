@@ -23,6 +23,8 @@ const NavbarMenu = () => {
     const { auth } = React.useContext(FirebaseContext);
     const [isSignedIn, setIsSignedIn] = React.useState(false);
 
+
+    // Sign out function
     const signOut = () => {
 
         auth.signOut().then(() => {
@@ -35,8 +37,7 @@ const NavbarMenu = () => {
 
     };
 
-
-
+    // Close navbar when screen is less than 960px
     React.useEffect(() => {
         window.addEventListener(
             "resize",
@@ -44,23 +45,25 @@ const NavbarMenu = () => {
         );
     }, []);
 
-
+    // Check if user is logged in
     React.useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user) => {
+        const isLoged = auth.onAuthStateChanged((user) => {
             setIsSignedIn(!!user);
         });
-        return () => unsubscribe();
+        return () => isLoged();
 
     }, [auth]);
 
 
 
+    // Navbar items
     const profileMenuItems = [
         { label: "My Profile", icon: BsFillPersonFill },
         { label: "Edit Profile", icon: GoGear, },
         { label: "Sign Out", icon: GoSignOut, },
     ];
 
+    // Profile render function
     function ProfileMenu() {
         const [isMenuOpen, setIsMenuOpen] = React.useState(false);
         const closeMenu = () => setIsMenuOpen(false);
@@ -88,21 +91,18 @@ const NavbarMenu = () => {
                         return (
                             <MenuItem
                                 key={label}
-                                onClick={closeMenu}
-                                className={`flex items-center gap-2 rounded ${isLastItem
-                                    ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
-                                    : ""
-                                    }`}
+                                color={isLastItem ? "red" : "inherit"}
+                                className={`flex items-center gap-2 rounded ${isLastItem ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10" : ""}`}
                             >
                                 {React.createElement(icon, {
                                     className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
-                                    strokeWidth: 2,
+                                    strokeWidth: 0.5,
                                 })}
+
                                 <Typography
                                     as="span"
                                     variant="small"
                                     className="font-normal"
-                                    color={isLastItem ? "red" : "inherit"}
                                     onClick={isLastItem ? signOut : undefined}
                                 >
                                     {label}
@@ -115,6 +115,7 @@ const NavbarMenu = () => {
         );
     }
 
+    // Dropdown menu
     const Dropdown = () => {
         return (
             <Menu animate={{ mount: { y: 0 }, unmount: { y: 25 }, }}>
@@ -138,6 +139,7 @@ const NavbarMenu = () => {
         )
     }
 
+    // Navbar list
     const navList = (
         <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
 
@@ -151,7 +153,6 @@ const NavbarMenu = () => {
             </Link>
         </ul>
     );
-
 
 
     return (
@@ -198,7 +199,7 @@ const NavbarMenu = () => {
             </div>
             <Collapse open={openNav}>
                 {navList}
-                {auth.currentUser ? null : (
+                {isSignedIn ? null : (
                     <Button size="md" fullWidth className="mb-2">
                         Get Started
                     </Button>
