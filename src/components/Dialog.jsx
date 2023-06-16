@@ -62,8 +62,8 @@ const LoginDialog = () => {
                     </CardHeader>
                     <form onSubmit={handleSubmit}>
                         <CardBody className="flex flex-col gap-4">
-                            <Input label="Email" name="email" size="lg" />
-                            <Input label="Password" name="password" size="lg" />
+                            <Input type="email" label="Email" name="email" size="lg" required />
+                            <Input type="password" label="Password" name="password" size="lg" required/>
                         </CardBody>
                         <CardFooter className="pt-0">
                             <Button variant="gradient" type="submit" fullWidth color={status ? 'blue' : 'red'} className={status ? '' : 'animate-shake'}>
